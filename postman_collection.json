@@ -1,0 +1,209 @@
+{
+	"info": {
+		"_postman_id": "78002bd4-d5e0-4e99-b6a3-72a4f87c5a10",
+		"name": "PI - GameProject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17382758"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "gamePlatform123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "gamePlatform",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "sam@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234@",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/oauth/token",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Platforms",
+			"item": [
+				{
+					"name": "Platform by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/platforms/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"platforms",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find All Platforms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/platforms",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"platforms"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GameReviews",
+			"item": [
+				{
+					"name": "New Review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODM4NjQ4NTcsInVzZXJfbmFtZSI6InNhbUBnbWFpbC5jb20iLCJqdGkiOiIwOTFkMTYwMy0yOGEwLTQzYzctYTQ4Zi03MGQwNzg0NjY3MGQiLCJjbGllbnRfaWQiOiJnYW1lUGxhdGZvcm0iLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXX0.P43hPydfH8CKjWXJidWqZv_NS04AEQOaRF1t4736I4g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Amei!\",\r\n    \"author\": {\r\n        \"email\": \"sam@gmail.com\"    \r\n    },\r\n    \"score\": 10,\r\n    \"comment\": \"Achei muito divertido o jogo, e também muito legal jogar com a família\",\r\n    \"platform\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/reviews",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find All Reviews",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/reviews",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "New User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Julio Silva\",\r\n    \"email\": \"julio@gmail.com\",\r\n    \"password\": \"123@323\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
