@@ -11,10 +11,11 @@ import app.vercel.samlucena.game.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import javax.persistence.EntityNotFoundException;
 
 @Service
 public class GameReviewService {
@@ -32,9 +33,15 @@ public class GameReviewService {
     private UserRepository userRepository;
 
     @Transactional(readOnly = true)
-    public Page<GameReviewDTO> findAll(Pageable pageable){
+    public Page<GameReviewDTO> findAll(Long platformId, Pageable pageable){
+        if(platformId != null){
+            Platform platform = platformRepository.findById(platformId).orElseThrow(() -> new ResourceNotFoundException("Platform not found"));
+            Page<GameReview> page = repository.findByPlatform(platform, pageable);
+            return page.map(GameReviewDTO::new);
+        }
         Page<GameReview> page = repository.findAll(pageable);
         return page.map(GameReviewDTO::new);
+
     }
 
 

@@ -20,8 +20,8 @@ public class GameReviewResource {
     private GameReviewService service;
 
     @GetMapping
-    public ResponseEntity<Page<GameReviewDTO>> findAll(Pageable pageable){
-        Page<GameReviewDTO> page = service.findAll(pageable);
+    public ResponseEntity<Page<GameReviewDTO>> findAll(@RequestParam(name = "platformId", defaultValue = "") Long platformId, Pageable pageable){
+        Page<GameReviewDTO> page = service.findAll(platformId, pageable);
         return ResponseEntity.ok(page);
     }
 
