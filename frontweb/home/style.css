@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 0px;
+}
+
+.description{
+    background-color: white;
+    width: 500px;
+    height: fit-content;
+    padding: 30px;
+    text-align: left;
+    border-radius: 10px;
+}
