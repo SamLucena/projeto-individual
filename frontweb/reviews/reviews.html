@@ -18,9 +18,9 @@
             <img width="150" src="https://www.crashbandicoot.com/content/dam/atvi/Crash/crash-touchui/hub/hero/crash-logo.png" alt="Crash Bandicoot Logo">
             <ul>
                 <li><a href="./../home/index.html">Home</a></li>
-                <li><a href="./reviews.html">Reviews</a></li>
+                <li><a href="./reviews.html" onclick="">Reviews</a></li>
                 <li class="login">
-                    <a href="./../auth/login.html">
+                    <a id="reviews" href="./../auth/login.html">
                         Login
                         <span class="material-symbols-outlined">
                             login
@@ -31,32 +31,20 @@
         </nav>
     </header>
     <div class="container">
-        <div class="card">
-            <h2 id="authorAndDate">Samuel Lucena - 15/05/2023</h2>
-            <p id="comment">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis cupiditate soluta nisi assumenda, harum iure impedit pariatur suscipit necessitatibus reprehenderit aliquid. In incidunt soluta officiis rem praesentium quam et facilis.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. At, neque cumque quo inventore pariatur illo reiciendis porro numquam, voluptates quae aspernatur sint quisquam animi et. Eaque recusandae dolorem voluptatum nihil.
-            </p>
-            <p>
-                <strong id="grade">Nota: 10</strong>
-            </p>
-            <p>
-                <strong id="platform">Plataforma: Playstation 4</strong>
-            </p>
+        <div class="buttons">
+            <button class="button" onclick="showCards()">
+                Atualizar
+                <span class="material-symbols-outlined">
+                    update
+                </span>
+            </button>
+            <select class="button" id="platforms" onchange="findReviewsByPlatform()">
+                <option value="">Selecione uma plataforma</option>
+            </select>
         </div>
-        <div class="card">
-            <h2 id="authorAndDate">Samuel Lucena - 15/05/2023</h2>
-            <p id="comment">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis cupiditate soluta nisi assumenda, harum iure impedit pariatur suscipit necessitatibus reprehenderit aliquid. In incidunt soluta officiis rem praesentium quam et facilis.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. At, neque cumque quo inventore pariatur illo reiciendis porro numquam, voluptates quae aspernatur sint quisquam animi et. Eaque recusandae dolorem voluptatum nihil.
-            </p>
-            <p>
-                <strong id="grade">Nota: 10</strong>
-            </p>
-            <p>
-                <strong id="platform">Plataforma: Playstation 4</strong>
-            </p>
-        </div>
+        <div class="content" id="content"></div>
     </div>
+    <script src="./../env.js"></script>
+    <script src="./index.js"></script>
 </body>
 </html>
