@@ -7,7 +7,7 @@ document.getElementById('submit').addEventListener('click', e => {
     const password = document.getElementById('password').value;
     const grant_type = "password";
     const user = {
-        email,
+        username: email,
         password,
         grant_type
     }

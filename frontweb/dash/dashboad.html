@@ -9,8 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="./../style.css">
-    <link rel="stylesheet" href="./style.css">
-    <title>Reviews</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Dashboard</title>
 </head>
 <body>
     <header>
@@ -18,10 +18,10 @@
             <img width="150" src="https://www.crashbandicoot.com/content/dam/atvi/Crash/crash-touchui/hub/hero/crash-logo.png" alt="Crash Bandicoot Logo">
             <ul>
                 <li><a href="./../home/index.html">Home</a></li>
-                <li><a href="./reviews.html">Reviews</a></li>
+                <li><a href="./../reviews/reviews.html">Reviews</a></li>
                 <li><a href="./../dash/dashboad.html">Dashboard</a></li>
                 <li class="login">
-                    <a id="reviews" href="./../auth/login.html">
+                    <a href="./../auth/login.html">
                         Login
                         <span class="material-symbols-outlined">
                             login
@@ -32,20 +32,27 @@
         </nav>
     </header>
     <div class="container">
-        <div class="buttons">
-            <button class="button" onclick="showCards()">
-                Atualizar
-                <span class="material-symbols-outlined">
-                    update
+        <button class="button">
+            Atualizar
+            <span class="material-symbols-outlined">
+                update
+            </span>
+        </button>
+
+        <div class="indicators">
+            <div class="card-ind">
+                <div class="platform">Playstation 4</div>
+                <span>Reviews :
+                    <span class="value">1</span>
                 </span>
-            </button>
-            <select class="button" id="platforms" onchange="findReviewsByPlatform()">
-                <option value="">Selecione uma plataforma</option>
-            </select>
+            </div>
+            <div class="card-ind">
+                <div class="platform">Playstation 4</div>
+                <span>Reviews :
+                    <span class="value">1</span>
+                </span>
+            </div>
         </div>
-        <div class="content" id="content"></div>
     </div>
-    <script src="./../env.js"></script>
-    <script src="./index.js"></script>
 </body>
 </html>
