@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>  
+    <title>Crie sua review</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <img width="150" src="https://www.crashbandicoot.com/content/dam/atvi/Crash/crash-touchui/hub/hero/crash-logo.png" alt="Crash Bandicoot Logo">
+            <ul>
+                <li><a href="../../home/index.html">Home</a></li>
+                <li><a href="../reviews.html">Reviews</a></li>
+                <li><a href="../../dash/dashboad.html">Dashboard</a></li>   
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="login-form">
+            <h2>Faça sua avaliação!</h2>
+            <form id="create">
+                <div class="form-group">
+                    <label for="title">Título:</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+              <div class="form-group">
+                <label for="comment">Comentário:</label>
+                <input type="text" id="comment" name="comment" required>
+              </div>
+              <div class="form-group">
+                <label for="platforms">Plataforma:</label>
+                <select name="platforms" id="platforms">
+                  <option value="">Selecione sua plataforma</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="score">Nota:</label>
+                <input type="number" id="score" name="score" min="0" max="10">
+              </div>
+              <div class="form-group">
+                <button type="submit">Salvar</button>
+              </div>
+            </form>
+        </div>
+    </div>
+    <script src="save.js"></script>
+    <script src="../../env.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+</html>

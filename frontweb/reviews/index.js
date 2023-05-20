@@ -26,7 +26,7 @@ async function findAllPlatforms(){
 }
 
 async function findAll(){
-    const response = await fetch(`${BASE_URL}/reviews?size=9`)
+    const response = await fetch(`${BASE_URL}/reviews?sort=moment,desc`)
     const data = await response.json();
     return data;
 }
