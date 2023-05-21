@@ -3,6 +3,7 @@ const selectPlatforms = document.getElementById('platforms');
 
 window.addEventListener('DOMContentLoaded', async () => {
     showCards();
+    showLoginOrLogout("./reviews.html");
     const platforms = await findAllPlatforms();
     platforms.content.forEach(platform => {
         const option = document.createElement('option');

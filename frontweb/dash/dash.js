@@ -1,4 +1,2 @@
 
-window.addEventListener('DOMContentLoaded', () => {
-    showIndicators();
-})
+window.addEventListener('DOMContentLoaded', () => showLoginOrLogout("./dashboard.html"));
