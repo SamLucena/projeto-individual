@@ -31,22 +31,13 @@
                 update
             </span>
         </button>
-
-        <div class="indicators">
-            <div class="card-ind">
-                <div class="platform">Playstation 4</div>
-                <span>Reviews :
-                    <span class="value">1</span>
-                </span>
-            </div>
-            <div class="card-ind">
-                <div class="platform">Playstation 4</div>
-                <span>Reviews :
-                    <span class="value">1</span>
-                </span>
-            </div>
+        <div id="indicators" class="indicators"></div>
+        <div class="chart-content">
+            <canvas id="chart" style="color: white"></canvas>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../env.js"></script>
     <script src="../utils.js"></script>
     <script src="dash.js"></script>
 </body>
