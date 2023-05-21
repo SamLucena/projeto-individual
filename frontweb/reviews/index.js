@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         option.text = platform.name;
         selectPlatforms.add(option);
     });
-})
+});
 
 async function findReviewsByPlatform(){
     const platformId = selectPlatforms.value;

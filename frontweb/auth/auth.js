@@ -1,5 +1,5 @@
-const CLIENT_ID = window.CLIENT_ID || 'gamePlatform';
-const CLIENT_SECRET = window.CLIENT_SECRET || 'gamePlatform123';
+const CLIENT_ID = 'my-client-id';
+const CLIENT_SECRET = 'my-client-secret';
 
 const CREDENTIALS = `${CLIENT_ID}:${CLIENT_SECRET}`;
 const AUTH_HEADER = `Basic ${btoa(CREDENTIALS)}`;
