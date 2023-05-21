@@ -15,7 +15,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
 async function findReviewsByPlatform(){
     const platformId = selectPlatforms.value;
-    const response = await fetch(`${BASE_URL}/reviews?platformId=${platformId}`);
+    const response = await fetch(`${BASE_URL}/reviews?platformId=${platformId}&sort=moment,desc`);
     const data = await response.json();
     showCards(data);
 }

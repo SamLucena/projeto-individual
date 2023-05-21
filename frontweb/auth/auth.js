@@ -28,5 +28,14 @@ document.getElementById('submit').addEventListener('click', e => {
         localStorage.setItem("token", token)
         window.location.href = "../reviews/create/save.html";
     })
-    .catch(err => console.log(err));
+    .catch(() => {
+        Swal.fire({
+            title: 'E-mail e/ou senha inválidos',
+            icon: 'error',
+            timer: 3000, // Tempo de exibição do toast em milissegundos
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false
+        })
+    });
 });
