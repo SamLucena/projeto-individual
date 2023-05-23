@@ -4,6 +4,12 @@ const CLIENT_SECRET = 'my-client-secret';
 const CREDENTIALS = `${CLIENT_ID}:${CLIENT_SECRET}`;
 const AUTH_HEADER = `Basic ${btoa(CREDENTIALS)}`;
 
+window.addEventListener("DOMContentLoaded", () => {
+    if(localStorage.getItem("token") !== null){
+        window.location = "../home/index.html"
+    }
+})
+
 document.getElementById('submit').addEventListener('click', e => {
     e.preventDefault();
     const email = document.getElementById('email').value;

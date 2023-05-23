@@ -1,6 +1,10 @@
 const platforms = document.getElementById('platforms');
 
 window.addEventListener("DOMContentLoaded", async () => {
+    
+    if(localStorage.getItem("token") === null){
+        window.location = "../../home/index.html"
+    }
     const response = await fetch(`${BASE_URL}/platforms`);
     const data = await response.json();
     data.content.forEach(plat => {

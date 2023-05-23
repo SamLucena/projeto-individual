@@ -1,3 +1,10 @@
+
+window.addEventListener("DOMContentLoaded", () => {
+    if(localStorage.getItem("token") !== null){
+        window.location = "../home/index.html"
+    }
+})
+
 const createForm = document.getElementById('create');
 createForm.addEventListener('submit', async e => {
     e.preventDefault();
