@@ -12,12 +12,24 @@ createForm.addEventListener('submit', async e => {
         password
     }
 
-    await fetch(`${BASE_URL}/users`, {
+    const res = await fetch(`${BASE_URL}/users`, {
         method: 'POST',
         body: JSON.stringify(user),
         headers: {
             'Content-Type': 'application/json'
         }
     })
-    window.location = '/auth/login.html';
+    const data = await res.json();    
+    if(data.status == 422){
+        Swal.fire({
+            title: 'E-mail já está em uso',
+            icon: 'warning',
+            timer: 3000, // Tempo de exibição do toast em milissegundos
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false
+        })
+    }else{
+        window.location = './login.html'
+    }
 });
