@@ -1,1 +1,1 @@
-const BASE_URL = "http://localhost:8080";
+const BASE_URL = "https://projeto-individual-production.up.railway.app";
