@@ -50,6 +50,9 @@ async function showCards(list){
             <div class="card">
                 <h2>${review.author.name} - ${formatDate}</h2>
                 <p>
+                    <strong>${review.title}</strong>
+                </p>
+                <p>
                     ${review.comment}    
                 </p>
                 <p>

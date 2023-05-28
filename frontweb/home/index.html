@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,40 +8,85 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="./../style.css">
     <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="../favicon.svg" type="image/x-icon">
     <title>Home</title>
 </head>
+
 <body>
     <header>
         <nav>
-            <img width="150" src="https://www.crashbandicoot.com/content/dam/atvi/Crash/crash-touchui/hub/hero/crash-logo.png" alt="Crash Bandicoot Logo">
+            <img width="150"
+                src="https://www.crashbandicoot.com/content/dam/atvi/Crash/crash-touchui/hub/hero/crash-logo.png"
+                alt="Crash Bandicoot Logo">
             <ul>
                 <li><a href="./index.html">Home</a></li>
-                <li><a href="./../reviews/reviews.html">Reviews</a></li>
+                <li><a href="./../reviews/reviews.html">Avaliações</a></li>
                 <li><a href="./../dash/dashboard.html">Dashboard</a></li>
-                <li id="login" class="login"></li>    
+                <li id="login" class="login"></li>
             </ul>
         </nav>
     </header>
     <div class="container">
-        <div class="description">
-            <h1>Test Example</h1>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis cupiditate soluta nisi assumenda, harum iure impedit pariatur suscipit necessitatibus reprehenderit aliquid. In incidunt soluta officiis rem praesentium quam et facilis.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. At, neque cumque quo inventore pariatur illo reiciendis porro numquam, voluptates quae aspernatur sint quisquam animi et. Eaque recusandae dolorem voluptatum nihil.
-            </p>
-        </div>
-        <div class="description">
-            <h1>Test Example</h1>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis cupiditate soluta nisi assumenda, harum iure impedit pariatur suscipit necessitatibus reprehenderit aliquid. In incidunt soluta officiis rem praesentium quam et facilis.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. At, neque cumque quo inventore pariatur illo reiciendis porro numquam, voluptates quae aspernatur sint quisquam animi et. Eaque recusandae dolorem voluptatum nihil.
-            </p>
-        </div>
+        <main>
+            <div class="main-content">
+                <div>
+                    <h1 id="title" class="title"></h1>
+                    <div class="links">
+                        <a href="../reviews/reviews.html">Avaliações</a>
+                        <a href="../dash/dashboard.html">Dashboard</a>
+                    </div>
+                </div>
+            </div>
+            <div class="about">
+                <h1>Por que o crash bandicoot?</h1>
+                <div class="card-about">
+                    <p>
+                        Quando eu era criança, uma das minhas melhores lembranças era jogar Crash Bandicoot com meus
+                        primos. A diversão era garantida, mas tínhamos um pequeno obstáculo: tínhamos apenas um
+                        controle. Isso significava que precisávamos nos revezar para jogar. Era uma verdadeira
+                        competição saudável, onde cada um de nós esperava ansiosamente pelo nosso turno para pegar o
+                        controle e embarcar em aventuras emocionantes pelo mundo colorido de Crash.
+                    </p>
+                </div>
+            </div>
+            <div class="about-me">
+                <div class="card">
+                    <div class="content">
+                        <p class="heading">
+                            Samuel Lucena
+                        </p>
+                        <p class="para">
+                            Uma jornada de paixão e habilidades técnicas. Este site combina programação, design cuidadoso e conteúdo envolvente para oferecer uma experiência única aos visitantes. Cada detalhe foi feito com carinho e dedicação
+                        </p>
+                        <a href="https://github.com/samlucena" class="btn" target="_blank">Saiba mais</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <p class="heading">
+                            Tecnologias
+                        </p>
+                        <p class="para">
+                            <ul>
+                                <li>JAVA</li>
+                                <li>JS</li>
+                                <li>CSS</li>
+                                <li>
+                                    HTML
+                                </li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
     <script src="../utils.js"></script>
     <script src="index.js"></script>
 </body>
+
 </html>

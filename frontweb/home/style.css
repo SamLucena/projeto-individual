@@ -1,14 +1,150 @@
 .container{
-    display: flex;
-    justify-content: space-around;
-    padding: 40px 0px;
+    background-attachment: fixed;
 }
 
-.description{
-    background-color: white;
-    width: 500px;
-    height: fit-content;
+.title{
+    color: white;
+    text-transform: uppercase;
+    font-size: 50pt;
+    width: 100%;
+}
+
+main{
+    height: 100%;
+}
+
+.main-content{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.links{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.links a{
+    text-decoration: none;
+    padding: 10px 50px;
+    background-color: transparent;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    border: 2px solid white;
+}
+
+.links a:hover{
+    opacity: .5;
+    transition: .4s;
+}
+
+.about{
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.card-about{
+    width: 30%;
+    background-image: url("https://3.bp.blogspot.com/-yZswRUKLSSk/Wc20BSPiREI/AAAAAAAAAnA/_FFiTCUgmwEjyI8ty5yvyilu_jfEJpv7wCLcBGAs/s1600/crash-bandicoot-n-sane-trilogy-screen-04-us-03dec16.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: contain;
     padding: 30px;
-    text-align: left;
     border-radius: 10px;
+    font-weight: bold;
+    color: white;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 320px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 32px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+  
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    color: black;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+  
+.content .heading {
+    font-weight: 700;
+    font-size: 32px;
+}
+  
+.content .para {
+    line-height: 1.5;
+}
+  
+.content .btn {
+    color: #e8e8e8;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    background: #E67929;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+  
+.card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background: #E67929;
+    z-index: -1;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+  
+.card:hover::before {
+    height: 100%;
+}
+  
+.card:hover {
+    box-shadow: none;
+}
+  
+.card:hover .btn {
+    color: #212121;
+    background: #e8e8e8;
+}
+  
+.content .btn:hover {
+    outline: 2px solid #e8e8e8;
+    background: transparent;
+    color: #e8e8e8;
+}
+  
+.content .btn:active {
+    box-shadow: none;
+} 
+
+.about-me{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 50px;
+    width: 100%;
 }

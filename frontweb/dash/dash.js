@@ -1,6 +1,10 @@
 const indicators = document.getElementById('indicators');
+const buttonReview = document.getElementById('buttonReview');
 
 window.addEventListener('DOMContentLoaded', async () => {
+    if(localStorage.getItem("token") == null){
+        buttonReview.style.display = "none";
+    }
     showLoginOrLogout("./dashboard.html")
     const response = await fetch(`${BASE_URL}/platforms`);
     const data = await response.json();
@@ -25,7 +29,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                 </div>
                 <div class="content-score">
                     Nota Média: 
-                    <span class="avg">${avg}</span>
+                    <span class="avg">${avg.toFixed(1)}</span>
                 </div>
             </div>
         `
@@ -52,7 +56,7 @@ function chartSetup(chart, platforms) {
             label: 'Notas Média',
             data: scores,
             backgroundColor: "rgba(124, 179, 66, 0.3)",
-            borderColor: " rgba(124, 179, 66, 1)",
+            borderColor: "rgba(124, 179, 66, 1)",
             borderWidth: 1
         }]
     };
@@ -66,7 +70,7 @@ function chartSetup(chart, platforms) {
                 y: {
                     beginAtZero: true,
                     ticks: {
-                        color: "white",
+                        color: "black",
                         font: {
                             weight: 'bold'
                         }
@@ -74,7 +78,7 @@ function chartSetup(chart, platforms) {
                 },
                 x: {
                     ticks: {
-                        color: "white",
+                        color: "black",
                         font: {
                             weight: 'bold'
                         }
@@ -90,11 +94,11 @@ function chartSetup(chart, platforms) {
                         weight: 'bold',
                         family: 'Poppins'
                     },
-                    color: 'white'
+                    color: 'black'
                 },
                 legend: {
                     labels: {
-                        color: "white"
+                        color: "black"
                     }
                 }
             }

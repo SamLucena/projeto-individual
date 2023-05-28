@@ -1,7 +1,7 @@
 const platforms = document.getElementById('platforms');
 
 window.addEventListener("DOMContentLoaded", async () => {
-    
+    showLoginOrLogout('../../home/index.html');
     if(localStorage.getItem("token") === null){
         window.location = "../../home/index.html"
     }
@@ -47,17 +47,20 @@ document.getElementById('create').addEventListener('submit', (e) => {
         }
 
         const data = JSON.stringify(review);
-
-        axios.post(`${BASE_URL}/reviews`, data, {
-            headers: {
-                'Authorization': 'Bearer ' + localStorage.getItem("token"),
-                'Content-Type': 'application/json'
+        Swal.fire({
+            title: 'Você tem certeza?',
+            text: "Está ação não poderá ser revertida!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Claro :)',
+            cancelButtonText: 'Cancelar'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              saveReview(data);
             }
         })
-        .then(res => {
-            window.location = "../reviews.html";
-        })
-        .catch(err => console.log(err));
     }
 });
 
@@ -69,4 +72,17 @@ function decodeToken(token) {
     }).join(''));
 
     return JSON.parse(jsonPayload);
+}
+
+function saveReview(data){
+    axios.post(`${BASE_URL}/reviews`, data, {
+        headers: {
+            'Authorization': 'Bearer ' + localStorage.getItem("token"),
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(res => {
+        window.location = "../reviews.html";
+    })
+    .catch(err => console.log(err));
 }
