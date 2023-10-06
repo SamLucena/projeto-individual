@@ -1,1 +1,1 @@
-const BASE_URL = "https://projeto-individual-production.up.railway.app";
+const BASE_URL = "https://projeto-individual-production-8bc9.up.railway.app";
